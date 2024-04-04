@@ -1,57 +1,22 @@
-class Person {
-    constructor (public firstname: string, public lastname: string) { }
-
-    get fullName() {
-        return this.firstname + ' ' + this.lastname
+abstract class Shape { // abstract is not fininsh class
+    constructor (public color: string ) {
+        
     }
-
-    protected walk() {
-        console.log('Walking') // different between protected and private method is that child class can still call the protected method but private method can only use inside the same class 
-    }
-
     
+    abstract render(): void // abstract method can only exist inside abstract class
     
-} 
-
-class Student extends Person {
-    constructor(public studentID: number, firtName: string, lastName: string) {
-        super(firtName, lastName)
-    }
-
-    takeTest() {
-        console.log('Take a test')
-    }
 }
 
-//let student = new Student (1, 'dong', 'tan')
+class Circle extends Shape {
+    constructor (public radius: number, color: string) {
+        super (color)
+    }
 
-class Teacher extends Person {
-    override get fullName() {
-        return 'Professor ' + super.fullName // Overide method tell the complier that we have change the method
+    override render(): void {
+        console.log('Rendering a circle')
     }
 }
 
+let shape = new Shape('red')
+shape.render()
 
-class Principal extends Person {
-    override get fullName() {
-        return 'principal ' + super.fullName 
-    }
-}
-
-//let teacher = new Teacher ('Dong', 'tan')
-//console.log(teacher.fullName)
-
-
-
-function printNames (people: Person[]) {
-    for (let person of people)
-        console.log(person.fullName)
-}
-
-
-printNames ([
-    new Student (1, 'dong', 'tan'),
-    new Teacher ('Tan', 'dong'),
-    new Principal ('Dong', 'zhu')
-
-])
