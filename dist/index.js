@@ -1,15 +1,13 @@
 "use strict";
 class Ride {
-    constructor() {
-        this.activeRides = 0;
-    }
-    start() { this.activeRides++; }
-    stop() { this.activeRides--; }
+    start() { Ride.activeRides++; }
+    stop() { Ride.activeRides--; }
 }
+Ride.activeRides = 0;
 let ride1 = new Ride();
 ride1.start();
 let ride2 = new Ride();
 ride2.start();
-console.log(ride1.activeRides);
-console.log(ride2.activeRides);
+console.log(Ride.activeRides);
+console.log(Ride.activeRides);
 //# sourceMappingURL=index.js.map
