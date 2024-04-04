@@ -1,13 +1,13 @@
 class Account {
-    readonly id: number;
-    owner: string;
-    private _balance: number;
+    // readonly id: number;
+    // owner: string;
+    // private _balance: number;
     nickname?: string;
 
-    constructor (id: number, owner : string, balance: number) {
-        this.id = id;
-        this.owner = owner;
-        this._balance = balance;
+    constructor (public readonly id: number, public owner : string, private _balance: number) {
+        //this.id = id;
+        //this.owner = owner;
+        //this._balance = balance;
     }
 
     deposit(amount: number): void {
@@ -20,9 +20,9 @@ class Account {
         return this._balance
     }
 
-    private method () {
+    /*private method () {
         return this.owner
-    }
+    }*/
 
 }
 
@@ -30,9 +30,9 @@ class Account {
 let account = new Account(1, 'dong', 0 )
 account.deposit(100)
 console.log(account.owner)
-console.log(account.) // can not call this.balance because it is private properties
+
 console.log(account.getBalance()) // but through getBalance() method you can call this.balance private properties
-console.log(account.) // Can not call method() outside the class because it is private method inside the class
+
 console.log(typeof account)
 console.log(account instanceof Account)
 
