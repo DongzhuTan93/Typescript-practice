@@ -1,6 +1,8 @@
-class KeyValuePair<K, V> {
-    constructor(public key: K , public value: V) {}  // Generic classes
+class ArrayUtils {
+    static wrapInArray<T>(value: T) {
+        return [value]
+    }
+
 }
 
-let pair = new KeyValuePair('1', 'a')
-pair.key.length // They are all string properties after key. 
+let numbers = ArrayUtils.wrapInArray(1)
