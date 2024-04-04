@@ -1,22 +1,30 @@
-abstract class Shape { // abstract is not fininsh class
-    constructor (public color: string ) {
-        
-    }
-    
-    abstract render(): void // abstract method can only exist inside abstract class
-    
+/*abstract class Calendar {
+    constructor(public name: string) {}
+
+    abstract  addEvent(): void
+    abstract removeEvent(): void
+}*/
+
+
+interface Calendar { // interface is a simpler abstract class? usinf interface we can describe the shape of en object
+    name: string
+    addEvent(): void
+    removeEvent(): void
 }
 
-class Circle extends Shape {
-    constructor (public radius: number, color: string) {
-        super (color)
-    }
 
-    override render(): void {
-        console.log('Rendering a circle')
-    }
+interface CloundCalendar extends Calendar {
+    sync(): void
 }
 
-let shape = new Shape('red')
-shape.render()
+class GoogleCalendar implements Calendar {
+    constructor(public name: string) {}
 
+    addEvent(): void {
+        throw new Error("Method not implemented.")
+    }
+    removeEvent(): void {
+        throw new Error("Method not implemented.")
+    }
+
+}
