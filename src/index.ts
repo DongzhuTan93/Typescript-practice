@@ -1,51 +1,18 @@
-class Account {
-    // readonly id: number;
-    // owner: string;
-    // private _balance: number;
-    nickname?: string;
-
-    constructor (
-        public readonly id: number, 
-        public owner : string, 
-        private _balance: number) {
-        //this.id = id;
-        //this.owner = owner;
-        //this._balance = balance;
-    }
-
-    deposit(amount: number): void {
-        if (amount <= 0)
-            throw new Error('Invalid amount');
-        this._balance += amount; 
-    }
-
-    get balance (): number { // getter is a method inside a class that we use for getting the value of a property
-        return this._balance
-    }
-
-    set balance (value: number) {
-        if (value < 0)
-            throw new Error ('Invalid value')
-        this._balance = value
-    }
+class SeatAssigment {
+    // A1, A2,...
+    // Dong, Leo..
 
 
-    /*private method () {
-        return this.owner
-    }*/
+    // A1: string;
+    // A2: string;  'Dong'
 
+    // Index singnature property, with this we can create the property dynamically and we also get type checking/ type safety
+    [seatNumber: string]: string
 }
 
 
-let account = new Account(1, 'dong', 0 )
-account.deposit(100)
-console.log(account.owner)
-
-console.log(account.balance) // when you do not want to call a method here, so we chang it with 'get' key word and we can access the balance property just like before.
-account.balance = 1 // just now we can not assign a value to balance, we need a 'set' kty word.
-
-console.log(typeof account)
-console.log(account instanceof Account)
-
-
+let seats = new SeatAssigment()
+seats.A1 = 'Dong'
+seats.A2 = 'Leo' // now we have another way to access a property
+seats.A3 = 1 // type safety
 
