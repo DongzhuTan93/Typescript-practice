@@ -23,3 +23,13 @@ class Student extends Person {
 
 let student = new Student (1, 'dong', 'tan')
 
+
+
+class Teacher extends Person {
+    override get fullName() {
+        return 'Professor ' + super.fullName // tell the complier that we have change the method
+    }
+}
+
+let teacher = new Teacher ('Dong', 'tan')
+console.log(teacher.fullName)
