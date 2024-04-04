@@ -5,9 +5,11 @@ class Person {
         return this.firstname + ' ' + this.lastname
     }
 
-    walk() {
-        console.log('Walking')
+    protected walk() {
+        console.log('Walking') // different between protected and private method is that child class can still call the protected method but private method can only use inside the same class 
     }
+
+    
     
 } 
 
