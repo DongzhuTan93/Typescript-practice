@@ -1,27 +1,38 @@
 class Account {
     readonly id: number;
     owner: string;
-    balance: number;
+    private _balance: number;
     nickname?: string;
 
     constructor (id: number, owner : string, balance: number) {
         this.id = id;
         this.owner = owner;
-        this.balance = balance;
+        this._balance = balance;
     }
 
     deposit(amount: number): void {
         if (amount <= 0)
             throw new Error('Invalid amount');
-        this.balance += amount;
-        
+        this._balance += amount; 
     }
+
+    getBalance () {
+        return this._balance
+    }
+
+    private method () {
+        return this.owner
+    }
+
 }
 
 
 let account = new Account(1, 'dong', 0 )
 account.deposit(100)
-console.log(account.balance)
+console.log(account.owner)
+console.log(account.) // can not call this.balance because it is private properties
+console.log(account.getBalance()) // but through getBalance() method you can call this.balance private properties
+console.log(account.) // Can not call method() outside the class because it is private method inside the class
 console.log(typeof account)
 console.log(account instanceof Account)
 
