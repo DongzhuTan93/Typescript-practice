@@ -1,8 +1,5 @@
-class ArrayUtils {
-    static wrapInArray<T>(value: T) {
-        return [value]
-    }
+import {Circle} from './shapes'
 
-}
+let circle = new Circle(1)
+console.log(circle.radius)
 
-let numbers = ArrayUtils.wrapInArray(1)
