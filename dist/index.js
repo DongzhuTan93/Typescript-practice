@@ -1,13 +1,4 @@
-"use strict";
-class GoogleCalendar {
-    constructor(name) {
-        this.name = name;
-    }
-    addEvent() {
-        throw new Error("Method not implemented.");
-    }
-    removeEvent() {
-        throw new Error("Method not implemented.");
-    }
-}
+import { Circle } from './shapes';
+let circle = new Circle(1);
+console.log(circle.radius);
 //# sourceMappingURL=index.js.map
