@@ -1,4 +1,2 @@
-import * as Shapes from './shapes'
+import { Circle, Square } from "./shapes/index";
 
-
-let circle = new Shapes.Circle(1)
