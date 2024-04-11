@@ -4,7 +4,7 @@ import reminderRouter from './routers/reminder';
 
 const app = express()
 
-
+app.use(express.json())
 app.use('/reminders', reminderRouter)
 
 
