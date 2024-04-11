@@ -3,6 +3,7 @@ import './App.css'
 import ReminderList from './components/ReminderList'
 import Reminder from './modles/reminder'
 import reminderService from './services/reminder'
+import NewReminder from './components/newReminder';
 
 
 
@@ -30,6 +31,7 @@ function App() {
 
   return (
     <div className="App">
+      <NewReminder />
       <ReminderList  items={reminders} onRemoveReminder={removeReminder}/>
     </div>
   )
